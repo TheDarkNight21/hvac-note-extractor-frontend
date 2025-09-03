@@ -1,3 +1,24 @@
+# HVAC Notes Extractor Frontend
+
+This frontend uploads a PDF and sends it to a backend endpoint `POST /api/extract-notes` which returns extracted text.
+
+Backend example (FastAPI): `uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)`.
+
+## Configure API URL
+
+- Set the backend base URL via `REACT_APP_API_BASE_URL` or leave the default placeholder.
+- Default in code: `http://<YOUR-SERVER-IP>:8000`.
+
+Examples:
+
+- Start backend (on remote/server):
+  - `uvicorn main:app --host 0.0.0.0 --port 8000 --reload`
+
+- Start frontend (locally), pointing to remote backend IP:
+  - `REACT_APP_API_BASE_URL=http://<YOUR-SERVER-IP>:8000 npm start`
+
+Replace `<YOUR-SERVER-IP>` with the reachable IP of the machine running uvicorn.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
